@@ -12,7 +12,6 @@ export default function AddTask () {
 
     const newItem = () => {
         setList([...list, { text: inputText, checked: false }]);
-        localStorage.setItem("list", JSON.stringify([...list, { text: inputText, checked: false }]));
         setInputText('');
     }
 

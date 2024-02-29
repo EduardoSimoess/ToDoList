@@ -14,6 +14,10 @@ export const GlobalProvider= ({ children }: any) => {
         }
     }, []);
 
+    useEffect(() => {
+        if(list.length) localStorage.setItem("list", JSON.stringify(list));
+    }, [list]);
+
     return(
         <GlobalContext.Provider value={{list, setList}}>
             {children}
