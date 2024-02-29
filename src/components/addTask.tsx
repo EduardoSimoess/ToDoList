@@ -8,15 +8,13 @@ export default function AddTask () {
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setInputText(event.target.value);
-        console.log(list);
-        
     }
 
     const newItem = () => {
-        setList([...list, inputText]);
+        setList([...list, { text: inputText, checked: false }]);
+        localStorage.setItem("list", JSON.stringify([...list, { text: inputText, checked: false }]));
+        setInputText('');
     }
-
-
 
     return (
         <div>

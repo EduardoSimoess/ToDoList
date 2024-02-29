@@ -1,4 +1,9 @@
 export interface ContextProps {
-    list: string[];
-    setList: React.Dispatch<React.SetStateAction<string[]>>;
+    list: ListProps[];
+    setList: React.Dispatch<React.SetStateAction<ListProps[]>>;
   }
+
+export interface ListProps {
+    text?: string;
+    checked?: boolean;
+}
