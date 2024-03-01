@@ -10,7 +10,7 @@ import { GlobalProvider } from "@/provider/global";
 export default function Home() {
   return (
     <GlobalProvider>
-        <main className="flex flex-col gap-4 px-6 font-serif dark:bg-black">
+        <main className="flex flex-col gap-4 px-6 font-serif dark:bg-black min-h-screen">
           <Header/>
           <List/>
           <TaskHandler/>

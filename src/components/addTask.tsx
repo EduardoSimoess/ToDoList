@@ -5,10 +5,13 @@ import { FaTimes, FaPaperPlane } from 'react-icons/fa';
 export default function AddTask () {
 
     const [inputText, setInputText] = useState<string>('');
+    const [dis, setDis] = useState<boolean>(true);
     const { list, setList, setHide } = useContext(GlobalContext);
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setInputText(event.target.value);
+        if(!event.target.value) setDis(true);
+        setDis(false);
     }
 
     const newItem = () => {
@@ -39,6 +42,7 @@ export default function AddTask () {
                 <button type="submit"
                  onClick={newItem}
                  className=" bg-red-500 dark:bg-purple-600 text-white font-sans rounded-lg px-3 py-2 hidden sm:block dark:hidden dark:sm:block hover:dark:bg-purple-800 hover:font-bold"
+                 disabled={dis}
                  >Add new item</button>
             </div>
         </div>
