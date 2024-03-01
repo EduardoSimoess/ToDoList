@@ -6,6 +6,7 @@ export const GlobalContext = createContext<ContextProps>(initialState);
 
 export const GlobalProvider= ({ children }: any) => {
     const [list, setList] = useState<ListProps[]>([]);
+    const [hide, setHide] = useState<boolean>(true);
 
     useEffect(() => {
         const storedList = localStorage.getItem("list");
@@ -19,7 +20,7 @@ export const GlobalProvider= ({ children }: any) => {
     }, [list]);
 
     return(
-        <GlobalContext.Provider value={{list, setList}}>
+        <GlobalContext.Provider value={{list, setList, hide, setHide}}>
             {children}
         </GlobalContext.Provider>
     )

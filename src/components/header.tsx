@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { GlobalContext } from "@/provider/global";
 import { counter } from "@/helpers/counter";
-import { AiFillCheckCircle, AiOutlineCheckCircle, AiOutlineClockCircle } from 'react-icons/ai';
+import { AiOutlineCheckCircle, AiOutlineClockCircle } from 'react-icons/ai';
 
 export default function Header() {
 
